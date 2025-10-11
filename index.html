@@ -17,15 +17,22 @@
 <style>
 /* === BASE STYLES === */
 :root{
-  --bg:#0f1724; --card:#0b1220; --muted:#9aa7b2; --accent:#0ea5a4; --glass: rgba(255,255,255,0.03);
+  /* Reverted colors for Dark/Black theme */
+  --bg:#0f1724; /* Slate/Dark Blue as primary background */
+  --card:#0b1220; /* Slightly darker card background */
+  --muted:#9aa7b2; /* Light muted gray */
+  --accent:#0ea5a4; 
+  --glass: rgba(255,255,255,0.03); /* Light glass effect for dark background */
   --maxw:1100px; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
-  margin:0; background:
-  linear-gradient(180deg, rgba(12,17,23,1) 0%, rgba(7,10,14,1) 100%);
-  color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  margin:0; 
+  /* Deep dark gradient for the background */
+  background: linear-gradient(180deg, rgba(12,17,23,1) 0%, rgba(7,10,14,1) 100%);
+  color:#e6eef6; /* Light text for dark background */
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
   line-height:1.45;
 }
 .container{max-width:var(--maxw); margin:28px auto; padding:28px;}
@@ -37,7 +44,7 @@ body{
 }
 .brand{display:flex;gap:12px;align-items:center}
 .brand img{height:46px;border-radius:8px;object-fit:cover}
-.brand h1{font-size:18px;margin:0;font-weight:700}
+.brand h1{font-size:18px;margin:0;font-weight:700; color: #fff; /* Ensure name is light */}
 .nav{display:flex;gap:12px;align-items:center}
 .nav a{color:var(--muted); text-decoration:none; padding:8px 10px;border-radius:8px; font-weight:600}
 .nav a:hover{color:#fff;background:var(--glass)}
@@ -45,20 +52,28 @@ body{
 
 /* Hero */
 .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:8px}
-.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
- padding:28px;border-radius:14px;backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,0.6)}
-.hero-left h2{margin:0;color:#fff;font-size:28px}
+.hero-card{
+  /* Adjusted shadow and background for dark theme */
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:28px;border-radius:14px;backdrop-filter:blur(6px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.hero-left h2{margin:0;color:#fff;font-size:28px} /* Ensure title is light */
 .tag{color:var(--accent);font-weight:700;margin-top:8px}
 .contact-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted);text-decoration:none;font-weight:600}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+  /* Adjusted badge background */
+  background:rgba(255,255,255,0.03);
+  color:var(--muted);text-decoration:none;font-weight:600
+}
 .hero-right{display:flex;justify-content:center}
 .profile-img{width:100%;max-width:390px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.04)}
 
 /* Grid sections */
 .grid{display:grid;grid-template-columns:1fr 360px;gap:24px;margin-top:24px}
-.card{background:var(--card);padding:20px;border-radius:12px}
+.card{background:var(--card);padding:20px;border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);}
 .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.section-title h3{margin:0;font-size:16px;color:#fff}
+.section-title h3{margin:0;font-size:16px;color:#fff} /* Ensure titles are light */
 .small{color:var(--muted);font-size:13px}
 
 /* Skills badges */
@@ -67,12 +82,22 @@ body{
 
 /* Projects */
 .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.project{padding:12px;border-radius:10px;background:linear-gradient(0deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02))}
-.project h4{margin:6px 0 0 0}
+.project{
+  padding:12px;border-radius:10px;
+  /* Adjusted project background */
+  background:linear-gradient(0deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+}
+.project h4{margin:6px 0 0 0; color: #fff;} /* Ensure project titles are light */
 
 /* Timeline */
 .timeline{display:flex;flex-direction:column;gap:12px}
-.entry{padding:12px;border-left:3px solid var(--accent);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:8px}
+.entry{
+  padding:12px;border-left:3px solid var(--accent);
+  /* Adjusted entry background */
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border-radius:8px;
+  color: #e6eef6; /* Ensure entry text is light */
+}
 .entry .meta{font-size:13px;color:var(--muted)}
 
 /* Footer / contact */
@@ -83,9 +108,9 @@ body{
 @media (max-width:980px){
   .hero{grid-template-columns:1fr;padding-bottom:8px}
   .grid{grid-template-columns:1fr}
-  .nav{display:none; flex-direction: column; position: absolute; top: 60px; right: 28px; background: var(--card); padding: 10px; border-radius: 8px; z-index: 10;}
+  .nav{display:none; flex-direction: column; position: absolute; top: 60px; right: 28px; background: var(--card); padding: 10px; border-radius: 8px; z-index: 10; box-shadow: 0 4px 8px rgba(0,0,0,0.4);}
   .nav a {width: 100%;}
-  .menu-toggle{display:inline-flex; border: none; background: transparent; color: #fff; font-size: 1.25rem; cursor: pointer;}
+  .menu-toggle{display:inline-flex; border: none; background: transparent; color: #fff; font-size: 1.25rem; cursor: pointer;} /* Changed icon color to light */
   .profile-img{max-width:320px}
 }
 
@@ -98,7 +123,8 @@ body{
 }
 .card:hover, .project:hover, .entry:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(14,165,164,0.25);
+  /* Adjusted shadow glow for dark theme */
+  box-shadow: 0 0 20px rgba(14,165,164,0.3);
 }
 
 /* Entry line glow animation */
@@ -146,7 +172,7 @@ body{
 /* Skills animation */
 .skill-img {
   transition: transform 0.3s ease, filter 0.3s ease;
-  filter: grayscale(0.4) brightness(0.9);
+  filter: grayscale(0.4) brightness(0.9); /* Reverted to dark theme filter */
 }
 .skill-img:hover {
   transform: scale(1.1) rotate(5deg);
@@ -159,7 +185,7 @@ body{
 }
 .section-title h3:hover {
   color: var(--accent);
-  text-shadow: 0 0 8px rgba(14,165,164,0.5);
+  text-shadow: 0 0 8px rgba(14,165,164,0.3);
 }
 
 /* Profile image animation */
@@ -184,7 +210,7 @@ body{
 /* GEMINI MODAL STYLES */
 .modal-overlay {
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.8); z-index: 1000;
+  background: rgba(0, 0, 0, 0.8); z-index: 1000; /* Reverted transparency for dark mode */
   display: none; justify-content: center; align-items: center;
 }
 .modal-content {
@@ -193,6 +219,7 @@ body{
   border: 1px solid var(--glass);
   max-height: 80vh; overflow-y: auto;
   position: relative;
+  color: #e6eef6; /* Ensure modal content text is light */
 }
 .modal-content h3 { color: var(--accent); margin-top: 0; }
 .modal-close {
@@ -200,9 +227,9 @@ body{
   border: none; color: var(--muted); font-size: 1.2rem; cursor: pointer;
   padding: 5px;
 }
-.modal-close:hover { color: #fff; }
+.modal-close:hover { color: #fff; } /* Changed hover color to light */
 .loading-spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Adjusted for dark background */
   border-top: 4px solid var(--accent);
   border-radius: 50%;
   width: 40px;
@@ -214,6 +241,94 @@ body{
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* === CUSTOM LINKEDIN CARD STYLES (DARK THEME) === */
+.linkedin-card-custom {
+    /* Use dark background properties from the theme */
+    background: var(--card); 
+    color: #e6eef6; /* Light text for readability */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%; 
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Subtle border for definition */
+    transition: all 0.3s ease;
+}
+/* This override is specific to the surrounding card structure in the HTML */
+#linkedin-card-wrapper .linkedin-card-custom {
+    margin: 0; 
+    box-shadow: none; 
+    border: none; 
+    border-radius: 0; 
+    padding-top: 0; 
+    padding-bottom: 0; 
+}
+/* Re-style inner elements of the custom card that rely on the parent padding/margin */
+#linkedin-card-wrapper .linkedin-card-custom .li-button {
+    margin-top: 20px;
+    margin-bottom: 20px; 
+}
+
+.linkedin-card-custom .li-logo {
+    color: #0a66c2; /* LinkedIn Blue */
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.linkedin-card-custom .li-img-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+}
+/* Style the profile image to be circular like in the sample */
+.linkedin-card-custom .li-profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Added a light ring for visibility against the dark card */
+    border: 2px solid var(--accent); 
+}
+
+.linkedin-card-custom .li-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #fff; /* Ensure name is bright white */
+}
+
+.linkedin-card-custom .li-title {
+    font-size: 0.95rem;
+    line-height: 1.35;
+    margin-top: 5px;
+    color: var(--muted); /* Use muted color for less emphasis */
+}
+
+.linkedin-card-custom .li-current-role {
+    font-size: 0.85rem;
+    margin-top: 8px;
+    color: var(--muted);
+}
+/* Style the view profile button */
+.linkedin-card-custom .li-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #0a66c2; /* Solid LinkedIn Blue background */
+    color: #ffffff; /* White text */
+    border: 1px solid #0a66c2;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.linkedin-card-custom .li-button:hover {
+    background: #084f99; /* Slightly darker blue on hover */
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(10, 102, 194, 0.4);
 }
 </style>
 </head>
@@ -331,7 +446,7 @@ body{
       </div>
 
       <!-- Certifications -->
-      <div class="card" id="certs">
+      <div class="card" id="certs" style="margin-top:16px;">
         <div class="section-title">
           <h3>Certifications</h3>
           <span class="small">Highlights</span>
@@ -345,8 +460,8 @@ body{
         </div>
       </div>
 
-      <!-- Currently working on -->
-      <div class="card" style="margin-top:16px" id="ai-tools">
+      <!-- Currently working on (NEW SEPARATE CARD) -->
+      <div class="card" style="margin-top:16px" id="currently-focus">
         <div class="section-title">
           <h3>Currently</h3>
           <span class="small">Focus areas</span>
@@ -360,6 +475,33 @@ body{
             <audio id="audioPlayer" controls style="width: 100%; height: 30px;"></audio>
         </div>
       </div>
+
+      <!-- LinkedIn Profile (NEW SEPARATE CARD, now using original embed code) -->
+      <div class="card" style="margin-top:16px;" id="linkedin-card-wrapper">
+        <div class="section-title">
+          <h3>My LinkedIn Profile</h3>
+          <span class="small">Connect with me</span>
+        </div>
+        
+        <!-- CUSTOM LINKEDIN BADGE (DARK THEME) -->
+        <div class="linkedin-card-custom" style="padding: 20px 20px 0 20px;">
+            <div class="li-logo">LinkedIn</div>
+            <div style="display:flex; align-items: flex-start; margin-top: 15px;">
+                <img class="li-profile-img" alt="Shaik Saida Vali" src="https://github.com/urstrulysaida/urstrulysaida/blob/main/Github%20Profile.jpeg?raw=true">
+            </div>
+            <div class="li-name">Shaik Saida vali</div>
+            <div class="li-title">
+                Final-Year CSE Student (Cybersecurity) | Aspiring Cloud Security Engineer | AWS | GCP | Azure | Passionate about Building Secure & Scalable Cloud Solutions
+            </div>
+            <div class="li-current-role">
+                Innovate Intern | Kakinada Institute of Engineering and Technology
+            </div>
+            <a class="li-button" href="https://in.linkedin.com/in/shaiksaidavali" target="_blank" rel="noopener">
+                View profile
+            </a>
+            <div style="margin-bottom: 20px;"></div> <!-- Spacer for bottom padding -->
+        </div>
+      </div>
     </section>
 
     <!-- Right column -->
@@ -371,32 +513,32 @@ body{
   </div>
 
   <div class="timeline">
-    <a href="https://drive.google.com/file/d/1LkavkbMS0g6BfP-QAjf9C9QE_IsrGSVv/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none; color:white;">
+    <a href="https://drive.google.com/file/d/1LkavkbMS0g6BfP-QAjf9C9QE_IsrGSVv/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none; color: #e6eef6;"> <!-- Ensure text is light -->
       <div><strong>Cybersecurity & Ethical Hacking</strong></div>
       <div class="meta">Innovate Intern · 03 May 2025 — 12 Jul 2025 · 10 weeks</div>
     </a>
 
-    <a href="https://drive.google.com/file/d/1xbeF-RusGvEKylOF6wELgnYVunS5x8RO/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none; color:white;">
+    <a href="https://drive.google.com/file/d/1xbeF-RusGvEKylOF6wELgnYVunS5x8RO/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none; color: #e6eef6;"> <!-- Ensure text is light -->
       <div><strong>Cloud Computing on GCP</strong></div>
       <div class="meta">Innovate Intern · Mar 2025 — May 2025 · 8 weeks</div>
     </a>
 
-    <a href="https://drive.google.com/file/d/1d1Rgjnw9mvVhVQJCXOZSz5bQRpthl33-/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none; color:white;">
+    <a href="https://drive.google.com/file/d/1d1Rgjnw9mvVhVQJCXOZSz5bQRpthl33-/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none; color: #e6eef6;"> <!-- Ensure text is light -->
       <div><strong>Internet of Things (IoT)</strong></div>
       <div class="meta">Innovate Intern · Oct 2024 — Feb 2025 · 16 weeks</div>
     </a>
     <h3>Internship</h3>
-    <a href="https://drive.google.com/file/d/1AmbBgEeqkv45qOzodPugsVUiaunObl2U/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none;color:white;">
+    <a href="https://drive.google.com/file/d/1AmbBgEeqkv45qOzodPugsVUiaunObl2U/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none;color: #e6eef6;"> <!-- Ensure text is light -->
       <div><strong>Zscaler Networking Virtual Internship</strong></div>
       <div class="meta">AICTE Intern · Virtual Internship · Zscaler</div>
     </a>
 
-    <a href="https://drive.google.com/file/d/1bGLpt7pwHiEaG9pvlNZnMlv7S35I3q5I/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none;color:white;">
+    <a href="https://drive.google.com/file/d/1bGLpt7pwHiEaG9pvlNZnMlv7S35I3q5I/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none;color: #e6eef6;"> <!-- Ensure text is light -->
       <div><strong>Fortinet Network Security Associate (NSE 1 & 2)</strong></div>
       <div class="meta">AICTE Intern · Virtual Internship · Fortinet</div>
     </a>
 
-    <a href="https://drive.google.com/file/d/1O4RZUHQNE9HKNfz8TmnvIsOb81f5jDwp/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none;color:white;">
+    <a href="https://drive.google.com/file/d/1O4RZUHQNE9HKNfz8TmnvIsOb81f5jDwp/view?usp=drive_link" target="_blank" rel="noopener" class="entry" style="text-decoration: none;color: #e6eef6;"> <!-- Ensure text is light -->
       <div><strong>Google AI & ML Virtual Internship</strong></div>
       <div class="meta">AICTE Intern · Virtual Internship · Google</div>
     </a>
@@ -412,6 +554,7 @@ body{
           <span class="small">Live</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+          <!-- GitHub graphs are designed for dark backgrounds -->
           <img style="width:100%;border-radius:8px" src="https://github-readme-activity-graph.vercel.app/graph?username=urstrulysaida&theme=react-dark" alt="contrib graph">
           <img style="width:100%;border-radius:8px" src="https://github-profile-trophy.vercel.app/?username=urstrulysaida&theme=discord&margin-w=15&margin-h=15" alt="trophies">
         </div>
@@ -464,6 +607,7 @@ body{
     <div id="modalContent"></div>
   </div>
 </div>
+
 
 <script>
 /* LLM API KEY setup (Leave as empty string for Canvas execution) */
